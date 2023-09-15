@@ -1,6 +1,7 @@
 import { createCookieSessionStorage, redirect } from "@remix-run/node";
 import invariant from "tiny-invariant";
 import { getProfileById } from "./models/user.server";
+import { Configuration, OpenAIApi } from "openai";
 
 invariant(
   process.env.SESSION_SECRET,
@@ -94,6 +95,35 @@ export async function createUserSession({
     },
   });
 }
+
+import OpenAI from 'openai';
+
+export const GPTChat = async (messages) => {
+  const openai = new OpenAI({
+    apiKey: process.env.OpenAIAPIKey,
+  });
+  const startTime = Date.now();
+
+  const data = await openai.chat.completions.create(
+    {
+      max_tokens: 2048,
+      model: "gpt-3.5-turbo",
+      temperature: 0.5,
+      messages: messages,
+    }
+  );
+
+  messages.push({
+    'role': 'assistant',
+    'content': data.choices[0].message.content 
+  });
+
+  const endTime = Date.now();
+  const elapsedTime = endTime - startTime;
+  console.log("Elapsed Time:", elapsedTime);
+  
+  return messages;
+};
 
 export async function logout(request: Request) {
   const session = await getSession(request);
