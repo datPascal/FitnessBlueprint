@@ -24,7 +24,7 @@ export default function Index() {
     
     <main className="flex flex-col h-screen">
       <HEADER />
-      <HEADLINE h1="One Place, All Fitness" p="Bundeled Knowledge bundeled with AI to get you to your goals."></HEADLINE>
+      <HEADLINE h1="One Place, All Fitness" p="Knowledge bundeled with AI to get you to your goals."></HEADLINE>
       <FOOTER />
     </main>
   );
