@@ -37,7 +37,7 @@ export async function loader({ request }: LoaderArgs) {
 
     console.log("newPrivacyPolicyId", newPrivacyPolicy.id)
 
-    return redirect(`/free-privacy-policy-generator/${newPrivacyPolicy.id}`);
+    return redirect(`/home/${newPrivacyPolicy.id}`);
     
 }
 

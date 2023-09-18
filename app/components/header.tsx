@@ -10,7 +10,18 @@ export default function HEADER() {
         <div className="navbar-start">
           <div className="px-2 mx-2 navbar-start">
             <div className="flex items-center">
-              <h1 className="text-2xl font-bold">Fitness Blueprint</h1>
+              {user ? (
+               <Link to="/Home" className="flex">
+               <img  src={require("./../assets/fav_fitness_blueprint.png")} className="h-8 mr-3 sm:h-8" alt="Fitness Blueprint Logo" />
+               <span className="text-2xl font-bold">Fitness Blueprint</span>
+             </Link>  
+            ) : (
+              <Link to="/" className="flex">
+                <img  src={require("./../assets/fav_fitness_blueprint.png")} className="h-8 mr-3 sm:h-8" alt="Fitness Blueprint Logo" />
+                <span className="text-2xl font-bold">Fitness Blueprint</span>
+            </Link>  
+            )}
+                         
               <div className="hidden lg:block">
                 <div className="flex items-center">
                   <div className="divider divider-horizontal"></div>
@@ -35,9 +46,14 @@ export default function HEADER() {
               </Form>
             </>
           ) : (
+            <>
+            <Link to="/join" className="btn btn-primary btn-sm rounded-btn mr-4">
+              Try it out for free
+            </Link>
             <Link to="/login" className="btn btn-ghost btn-sm rounded-btn">
               Log In
             </Link>
+            </>
           )}
         </div>
       </div>

@@ -77,7 +77,7 @@ export const action: ActionFunction = async ({ request }) => {
     request,
     userId: user.id,
     remember: false,
-    redirectTo: typeof redirectTo === "string" ? redirectTo : "/",
+    redirectTo: typeof redirectTo === "string" ? redirectTo : "/Home",
   });
 };
  
@@ -153,7 +153,7 @@ export default function Join() {
           >
             Create Account
           </button>
-          <input type="hidden" name="redirectTo" value="/" />
+          <input type="hidden" name="redirectTo" value="/Home" />
           <div className="flex items-center justify-center">
             <div className="text-center text-sm text-gray-900">
               Already have an account?{" "}

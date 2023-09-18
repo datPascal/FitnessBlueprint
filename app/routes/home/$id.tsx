@@ -7,6 +7,7 @@ import { useState, useEffect } from "react"
 import { GPTChat } from "app/session.server";
 import invariant from "tiny-invariant";
 import { Form, useActionData } from "@remix-run/react";
+import HEADLINE, { Headline } from "../../components/headline"
 import Checkbox from "../../components/checkbox"
 
 export async function loader({ request, params }: LoaderArgs) {
@@ -153,13 +154,15 @@ export default function App() {
     
     return(
         <>
+        <HEADLINE h1="Test" p="kleintest"></HEADLINE>
+        <div className="container">
             <div className="alert mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
                 <span>Under no circumstances should the generated privacy policy be considered a legally binding document. The provided privacy policy is offered "as is" and without any form of warranty. SolopreneurProTools.com holds no responsibility for any claims, damages, or liabilities that may arise. Its usage is at your own risk. It is strongly advised to seek legal counsel from professionals for proper guidance.</span>
             </div>
             <div className="flex-grow grid grid-cols-1 lg:grid-cols-3 gap-4 pb-4">
                     <Form method="post" className="rounded-2xl border ">
-                        <div className="p-4 items-left max-h-screen"> 
+                        <div className="p-4 items-left"> 
 
                             {/* Standard Form */}
                             <p className="ml-2">Your Website:</p>
@@ -285,6 +288,7 @@ export default function App() {
                             }
                         </div>
                     </div>
+                </div>
             </div>
         </>
     );
