@@ -1,30 +1,24 @@
 import HEADER from "../components/header";
 import FOOTER from "../components/footer";
-import ALLAPPS from "../components/allApps";
-import HEADLINE from "../components/headline";
-import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
-import { App, getApps } from "~/models/apps.server";
+import HERO from "../components/landingPage/Hero";
+import FAQ from "../components/landingPage/faq";
+import THREEFEATURES from "../components/landingPage/threefeatures";
 
-type LoaderData = {
-  Apps: App[];
-};
+import {useRef} from "react"
+import { motion } from "framer-motion"
 
-export async function loader () {
-  const Apps = await getApps();
-  console.log("apps", Apps)
-  return json({ Apps });
-};
+
 
 export default function Index() {
-  const data = useLoaderData<typeof loader>() as LoaderData;
-
+  const scrollRef = useRef(null)
 
   return (
     
-    <main className="flex flex-col h-screen">
+    <main className="flex flex-col bg-base-100">
       <HEADER />
-      <HEADLINE h1="One Place, All Fitness" p="Knowledge bundeled with AI to get you to your goals."></HEADLINE>
+      <HERO/>
+      <THREEFEATURES/>
+      <FAQ/>
       <FOOTER />
     </main>
   );

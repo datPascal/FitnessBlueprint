@@ -46,7 +46,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="h-full" data-theme="light">
+      <body className=" min-h-full flex-grow" data-theme="light">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
