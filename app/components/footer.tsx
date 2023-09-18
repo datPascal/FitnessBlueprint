@@ -12,7 +12,8 @@ const FOOTER = () => {
       <footer className="footer footer-center p-4 text-base-content rounded">
 
         <nav className="grid grid-flow-col gap-4">
-          <a href="https://Fitness-Blueprint.com/privacy">Privacy</a>
+          <Link to="./privacy"><a>Privacy</a></Link>
+          <Link to="./blog"><a>Blog</a></Link>
         </nav>
 
         <nav className="grid grid-flow-col gap-4">
