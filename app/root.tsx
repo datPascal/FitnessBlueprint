@@ -32,7 +32,7 @@ export async function loader({ request }: LoaderArgs) {
     user: await getUser(request),
   });
 };
-ReactGA.initialize('G-Y0DCC4E2P7');
+ReactGA.initialize('G-W1892Y1B4T');
 ReactGA.send('/LandingPage');
 
 export default function App() {
