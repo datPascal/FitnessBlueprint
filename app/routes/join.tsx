@@ -101,7 +101,9 @@ export default function Join() {
   }, [actionData]);
 
   return (
-    <div className="flex min-h-full bg-white flex-col justify-center">
+    <div className="flex flex-col bg-base-100">
+    <HEADER/>
+    <div className="flex flex-col flex-grow justify-center items-center mt-8 mb-8">
       <div className="mx-auto w-full max-w-md px-8">
         <Form className="space-y-6" method="post" noValidate>
           <div>
@@ -178,6 +180,8 @@ export default function Join() {
                   pathname: ".",
                   search: searchParams.toString(),
                 }}></Link>
+    </div>
+    <FOOTER/>
     </div>
   );
 }

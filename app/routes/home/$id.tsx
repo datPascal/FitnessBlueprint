@@ -7,7 +7,7 @@ import { useState, useEffect } from "react"
 import { GPTChat } from "app/session.server";
 import invariant from "tiny-invariant";
 import { Form, useActionData } from "@remix-run/react";
-import HEADLINE, { Headline } from "../../components/headline"
+import HEADLINE from "../../components/headline"
 import Checkbox from "../../components/checkbox"
 
 export async function loader({ request, params }: LoaderArgs) {

@@ -20,7 +20,7 @@ import tailwindStylesheetUrl from "./styles/tailwind.css";
 import { getUser } from "./session.server";
 
 export const meta: MetaFunction = () => {
-  return { title: "Solopreneur Pro Tools | Tool Overview" };
+  return { title: "Fitness Blueprint | Tool Overview" };
 };
 
 export const links: LinksFunction = () => {

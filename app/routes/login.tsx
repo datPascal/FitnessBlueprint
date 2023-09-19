@@ -9,8 +9,9 @@ import { Form, Link, useActionData, useSearchParams } from "@remix-run/react";
 import { verifyLogin } from "~/models/user.server";
 import { createUserSession, getUserId } from "~/session.server";
 import { validateEmail } from "~/utils";
-import HEADER from "../components/header";
 import FOOTER from "../components/footer";
+import HEADER from "../components/header";
+import HEADLINE from "../components/headline";
 
 export const meta: MetaFunction = () => {
   return {
@@ -94,7 +95,9 @@ export default function Login() {
   }, [actionData]);
 
   return (
-    <div className="flex flex-col justify-center min-h-full bg-white">
+    <div className="flex flex-col bg-base-100">
+    <HEADER/>
+    <div className="flex flex-col flex-grow justify-center items-center mt-8 mb-8">
       <div className="mx-auto w-full max-w-md px-8">
         <Form method="post" className="space-y-6" noValidate>
           <div>
@@ -174,6 +177,8 @@ export default function Login() {
           </div>
         </Form>
       </div>
+    </div>
+    <FOOTER/>
     </div>
 
   );
