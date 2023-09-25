@@ -46,9 +46,8 @@ export default function HEADER() {
                 </>
               ) : (
                 <>
-                <Link to="/getNotified"><li><a>
-                  Get notified, when we launch.</a></li>
-                </Link>
+                <Link to="/join"><li><a>Try it out for free</a></li></Link>
+                <Link to="/login"><li><a>Log In</a></li></Link>
                 </>
               )}
             </ul>
@@ -69,11 +68,12 @@ export default function HEADER() {
             </>
           ) : (
             <>
-            <Link to="/getNotified" className="btn btn-primary btn-sm rounded-btn mr-4">
-              Get notified, when we launch.
+            <Link to="/join" className="btn btn-primary btn-sm rounded-btn mr-4">
+              Try it out for free
             </Link>
-
-
+            <Link to="/login" className="btn btn-ghost btn-sm rounded-btn">
+              Log In
+            </Link>
             </>
           )}
           </div>

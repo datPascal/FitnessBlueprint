@@ -19,6 +19,16 @@ export async function getBlogposts() {
   return data.data;
 }
 
+export async function get4Blogposts() {
+  
+  let data = await supabase
+      .from('blog')
+      .select('title, description, img, img_alt, tags, created_at, url')
+      .limit(4)
+
+return data.data;
+}
+
 
 export async function getBlogpost({ url }) {
     let data = await supabase
