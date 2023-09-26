@@ -32,9 +32,7 @@ export async function loader({ params } : LoaderData) {
 
     let url = params.blogUrl
     loaderData["article"] = await getBlogpost({url})
-
     loaderData["posts"] = await get4Blogposts()
-
     return loaderData
 }
 
@@ -66,37 +64,13 @@ export default function blogUrl() {
   
     return (
         <>
-        <div className="w-full"><Link to="/Blog" className="btn">Get Back</Link></div>
-        <HEADLINE h1={loaderData.article.title} p={loaderData.article.description}/>
+        <div className="w-full"><Link to="/Blog" className="btn mb-4">Get Back</Link></div>
 
         <article className="prose max-w-[1400px] mr-auto ml-auto pb-4">
             <JsxRenderer jsxString={loaderData.article.blogpost}></JsxRenderer>
         </article>
 
-        <aside aria-label="Related articles" className="py-8 lg:py-24">
-            <div className="px-4 mx-auto max-w-screen-xl">
-                <h2 className="mb-8 text-2xl font-bold text-gray-900">Related articles</h2>
-                <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-                    
-                {loaderData["posts"].map((Blog) => (
-                    <article className="max-w-xs">
-                        <a href="#">
-                            <img src={Blog.img} className="mb-5 rounded-lg" alt={Blog.img_url}/>
-                        </a>
-                        <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900">
-                            <a href="#">{Blog.title}</a>
-                        </h2>
-                        <p className="mb-4 text-gray-500">{Blog.description}</p>
-                        <Link to={`/Blog/${Blog.url}`} className="btn btn-primary">Open</Link>
-
-                    </article>
-                ))}
-
-                </div>
-            </div>
-        </aside>
-
-            <div className="bg-white ">
+        <div className="bg-white ">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
                     <div className="mx-auto max-w-screen-md sm:text-center">
                         <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Sign up and get notified when we Launch!</h2>
@@ -117,11 +91,35 @@ export default function blogUrl() {
                                 {showButton ? <button type="submit" className="btn btn-secondary" onClick={() => setSeconds(3)} >Notify me</button> : <div className="btn btn-secondary">See ya! 💪🏽</div> }
                                 </div>
                             </div>
-                            <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer ">We care about the protection of your data. <a href="#" className="font-medium text-primary-600 hover:underline">Read our Privacy Policy</a>.</div>
+                            <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer ">We care about the protection of your data. <a href="fitness-blueprint.com/privacy" className="font-medium text-primary-600 hover:underline">Read our Privacy Policy</a>.</div>
                         </Form>
                     </div>
                 </div>
             </div>
+
+            <aside aria-label="Related articles" className="py-8 lg:py-24">
+                <div className="px-4 mx-auto max-w-screen-xl">
+                    <h2 className="mb-8 text-2xl font-bold text-gray-900">Related articles</h2>
+                    <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+                        
+                    {loaderData["posts"].map((Blog) => (
+                        <article className="max-w-xs">
+                            <a href="#">
+                                <img src={Blog.img} className="mb-5 rounded-lg" alt={Blog.img_url}/>
+                            </a>
+                            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900">
+                                <a href="#">{Blog.title}</a>
+                            </h2>
+                            <p className="mb-4 text-gray-500">{Blog.description}</p>
+                            <Link to={`/Blog/${Blog.url}`} className="btn btn-primary">Open</Link>
+                        </article>
+                    ))}
+
+                    </div>
+                </div>
+            </aside>
+
+            
         </>
     );
   };

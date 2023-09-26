@@ -34,20 +34,13 @@ function HeroHome() {
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
                   <Link
-                    to="/join"
+                    to="/getNotified"
                     className="btn btn-primary mr-4 "
                   >
-                    Try it out for free
+                    Get notified, when we launch
                   </Link>
                 </div>
-                <div>
-                  <Link
-                    to="/login"
-                    className="btn btn-ghost"
-                  >
-                    Log In
-                  </Link>
-                </div>
+                
               </div>
             </div>
           </div>

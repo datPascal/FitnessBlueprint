@@ -48,6 +48,7 @@ export default function App() {
     return(
         <div>
             <HEADLINE h1="Up to Date Knowledge about Fitness and Health" p="Find out whats good for you."/>
+            <div className="mb-4"></div>
             {loaderData.map((Blog) => (
                 <div className="card lg:card-side bg-base-100 shadow-xl mb-8">
                     <figure><img className="object-cover w-full aspect-square rounded-2xl h-96 md:h-auto md:w-48" src={Blog.img} alt={Blog.img_url}/></figure>

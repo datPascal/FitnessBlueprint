@@ -7,22 +7,47 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
     <url>
-        <loc>https://www.solopreneurprotools.com/</loc>
+        <loc>https://www.fitness-blueprint.com/</loc>
         <lastmod>2023-03-20</lastmod>
         <changefreq>always</changefreq>
         <priority>1</priority>
 
-        <loc>https://www.solopreneurprotools.com/privacy</loc>
+        <loc>https://www.fitness-blueprint.com/privacy</loc>
         <lastmod>2023-08-28</lastmod>
         <changefreq>always</changefreq>
         <priority>0.5</priority>
 
-        <loc>https://www.solopreneurprotools.com/free-daisyui-form-generator</loc>
+        <loc>https://www.fitness-blueprint.com/blog</loc>
         <lastmod>2023-08-28</lastmod>
         <changefreq>always</changefreq>
         <priority>0.8</priority>
 
-        <loc>https://www.solopreneurprotools.com/free-privacy-policy-generator</loc>
+        <loc>https://www.fitness-blueprint.com/blog/the-secret-sauce-for-muscle-growth</loc>
+        <lastmod>2023-08-28</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8</priority>
+
+        <loc>https://www.fitness-blueprint.com/blog/resistance-training-increases-muscle-mass</loc>
+        <lastmod>2023-08-28</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8</priority>
+
+        <loc>https://www.fitness-blueprint.com/blog/Advanced-Techniques-and-Methods-in-Resistance-Training</loc>
+        <lastmod>2023-08-28</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8</priority>
+
+        <loc>https://www.fitness-blueprint.com/blog/The-Optimal-Training-Intensity-Distribution-for-Endurance-Athletes</loc>
+        <lastmod>2023-08-28</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8</priority>
+
+        <loc>https://www.fitness-blueprint.com/blog/The-Science-Behind-Blood-Flow-Restricted-Training</loc>
+        <lastmod>2023-08-28</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.8</priority>
+
+        <loc>https://www.fitness-blueprint.com/blog/Improving-Adherence-to-Exercise-Interventions-during-Cancer-Treatment</loc>
         <lastmod>2023-08-28</lastmod>
         <changefreq>always</changefreq>
         <priority>0.8</priority>
