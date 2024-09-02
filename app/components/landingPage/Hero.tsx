@@ -34,10 +34,10 @@ function HeroHome() {
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
                   <Link
-                    to="/getNotified"
+                    to="/blog"
                     className="btn btn-primary mr-4 "
                   >
-                    Get notified, when we launch
+                    Visit our scientific blog
                   </Link>
                 </div>
                 
@@ -61,6 +61,17 @@ function HeroHome() {
                 </svg>
               </div>
             </div>
+          </div>
+          <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
+                <div>
+                <Link
+                    to="/getNotified"
+                    className="btn btn-primary mr-4 "
+                  >
+                    Get notified, when we launch.
+                  </Link>
+                
+                </div>
           </div>
         </div>
       </div>

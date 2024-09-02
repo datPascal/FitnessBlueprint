@@ -12,8 +12,9 @@ const FOOTER = () => {
       <footer className="footer footer-center p-4 text-base-content rounded">
 
         <nav className="grid grid-flow-col gap-4">
-          <Link to="./privacy"><a>Privacy</a></Link>
-          <Link to="./blog"><a>Blog</a></Link>
+          <Link to="/privacy"><li><a>
+          Privacy</a></li>
+                </Link>
         </nav>
 
         <nav className="grid grid-flow-col gap-4">

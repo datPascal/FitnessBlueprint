@@ -10,7 +10,7 @@ export const meta: MetaFunction = () => {
     };
   };
 
-export default function App() {
+export default function BLOG() {
 
 
     return(

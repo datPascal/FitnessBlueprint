@@ -46,8 +46,8 @@ export default function HEADER() {
                 </>
               ) : (
                 <>
-                <Link to="/getNotified"><li><a>
-                  Get notified, when we launch.</a></li>
+                <Link to="/blog"><li><a>
+                Visit our scientific blog</a></li>
                 </Link>
                 </>
               )}
