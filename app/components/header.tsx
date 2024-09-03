@@ -69,8 +69,8 @@ export default function HEADER() {
             </>
           ) : (
             <>
-            <Link to="/getNotified" className="btn btn-primary btn-sm rounded-btn mr-4">
-              Get notified, when we launch.
+            <Link to="/blog" className="btn btn-primary btn-sm rounded-btn mr-4">
+            Visit our scientific blog
             </Link>
 
 

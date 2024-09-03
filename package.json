@@ -57,6 +57,7 @@
     "react-ga": "^3.3.1",
     "react-ga4": "^2.1.0",
     "react-jsx-parser": "^1.29.0",
+    "react-schemaorg": "^2.0.0",
     "react-tailwindcss-select": "^1.8.5",
     "react-uploader": "^3.6.1",
     "remix": "^1.15.0",

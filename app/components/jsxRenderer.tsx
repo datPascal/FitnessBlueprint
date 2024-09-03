@@ -7,12 +7,12 @@ const JsxRenderer = ({ jsxString }) => {
   useEffect(() => {
     if(renderRef.current) {
       const sanitizedHTML = DOMPurify.sanitize(jsxString);
-      console.log("sanitizedHTML", sanitizedHTML)
+      //console.log("sanitizedHTML", sanitizedHTML)
       renderRef.current.innerHTML = sanitizedHTML;
     }
   }, [jsxString]);
 
-  console.log("jsxString", jsxString)
+  //console.log("jsxString", jsxString)
 
   return <div className="w-full" ref={renderRef} />;
 };

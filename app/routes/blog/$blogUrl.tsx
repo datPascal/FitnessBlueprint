@@ -5,7 +5,6 @@ import invariant from "tiny-invariant";
 import { getBlogpost, get4Blogposts } from "~/models/blog.server";
 import { createMailListEntry } from "~/models/mailList.server";
 import { Link, Form } from "@remix-run/react";
-import HEADLINE from "../../components/headline"
 import { useState, useEffect } from 'react';
 
 
@@ -15,10 +14,17 @@ type LoaderData = {
     posts: object;
   };
 
-export const meta: MetaFunction = () => {
-    return { 
-        title: "Fitness Blueprint | Blog", 
-        description: "See useful articles about what matters"
+  export const meta: MetaFunction = ({ data }: { data: LoaderData | undefined }) => {
+    if (!data) {
+      return {
+        title: "Fitness Blueprint | Blog",
+        description: "Blogpost Topic",
+      };
+    }
+  
+    return {
+      title: `${data.article.title} | Fitness Blueprint`,
+      description: data.article.description
     };
   };
 
@@ -105,11 +111,11 @@ export default function blogUrl() {
                     {loaderData["posts"].map((Blog) => (
                         <article className="max-w-xs">
                             <a href="#">
-                                <img src={Blog.img} className="mb-5 rounded-lg" alt={Blog.img_url}/>
+                                <img src={Blog.img} className="mb-5 rounded-lg" alt={Blog.img_url} />
                             </a>
-                            <h2 className="mb-2 text-xl font-bold leading-tight text-gray-900">
+                            <h3 className="mb-2 text-xl font-bold leading-tight text-gray-900">
                                 <a href="#">{Blog.title}</a>
-                            </h2>
+                            </h3>
                             <p className="mb-4 text-gray-500">{Blog.description}</p>
                             <Link to={`/Blog/${Blog.url}`} className="btn btn-primary">Open</Link>
                         </article>
