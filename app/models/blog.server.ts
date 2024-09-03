@@ -21,12 +21,15 @@ export async function getBlogposts() {
 
 export async function get4Blogposts() {
   
-  let data = await supabase
-      .from('blog')
-      .select('title, description, img, img_alt, tags, created_at, url')
-      .limit(4)
+  let { data, error } = await supabase
+    .rpc('get_random_blogposts');
 
-return data.data;
+  if (error) {
+    console.error('Error fetching blog posts:', error);
+    return [];
+  }
+
+  return data;
 }
 
 

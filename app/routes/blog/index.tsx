@@ -33,6 +33,36 @@ export default function App() {
     const loaderData = useLoaderData<typeof loader>();
     const [showButton, setShowButton] = useState(true); 
     const [seconds, setSeconds] = useState(0);
+
+    // State to manage the current page
+    const [currentPage, setCurrentPage] = useState(0);
+
+    // Number of blog posts per page
+    const postsPerPage = 10;
+
+    // Calculate the starting and ending index for the current page
+    const startIndex = currentPage * postsPerPage;
+    const endIndex = startIndex + postsPerPage;
+
+    // Get the current page of blog posts
+    const currentBlogs = loaderData.slice(startIndex, endIndex);
+
+    // Calculate the total number of pages
+    const totalPages = Math.ceil(loaderData.length / postsPerPage);
+
+    // Handle "Next" button click
+    const handleNext = () => {
+        if (currentPage < totalPages - 1) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    // Handle "Back" button click
+    const handleBack = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
   
     // add the following useEffect
     useEffect(() => {
@@ -49,7 +79,7 @@ export default function App() {
         <div>
             <HEADLINE h1="Up to Date Knowledge about Fitness and Health" p="Find out whats good for you."/>
             <div className="mb-4"></div>
-            {loaderData.map((Blog) => (
+            {currentBlogs.map((Blog) => (
                 <div className="card lg:card-side bg-base-100 shadow-xl mb-8">
                     <figure><img className="object-cover w-full aspect-square rounded-2xl h-96 md:h-auto md:w-48" src={Blog.img} alt={Blog.img_url}/></figure>
                     <div className="card-body">
@@ -61,6 +91,24 @@ export default function App() {
                     </div>
                 </div>
             ))}
+
+<div className="flex justify-between mt-4">
+                <button 
+                    onClick={handleBack} 
+                    disabled={currentPage === 0} 
+                    className="btn btn-secondary"
+                >
+                    Back
+                </button>
+                <p>Displaying {startIndex + 1} - {Math.min(endIndex, loaderData.length)} of {loaderData.length}</p>
+                <button 
+                    onClick={handleNext} 
+                    disabled={currentPage >= totalPages - 1} 
+                    className="btn btn-secondary"
+                >
+                    Next
+                </button>
+            </div>
 
             <div className="bg-white ">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
