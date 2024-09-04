@@ -11,14 +11,10 @@ const FOOTER = () => {
       <div className="divider mt-0 mb-0"></div>
       <footer className="footer footer-center p-4 text-base-content rounded">
 
-        <nav className="grid grid-flow-col gap-4">
-          <Link to="/privacy"><li><a>
-          Privacy</a></li>
-                </Link>
-        </nav>
+        
 
         <nav className="grid grid-flow-col gap-4">
-          <a href='https://twitter.com/SolopreneurTool'><p className="text-3xl">𝕏</p></a> 
+          <a href='https://x.com/pascallindenau'><p className="text-3xl">𝕏</p></a> 
         </nav>
 
         <aside>

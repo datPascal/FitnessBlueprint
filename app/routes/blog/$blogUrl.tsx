@@ -97,7 +97,12 @@ export default function blogUrl() {
                                 {showButton ? <button type="submit" className="btn btn-secondary" onClick={() => setSeconds(3)} >Notify me</button> : <div className="btn btn-secondary">See ya! 💪🏽</div> }
                                 </div>
                             </div>
-                            <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer ">We care about the protection of your data. <a href="fitness-blueprint.com/privacy" className="font-medium text-primary-600 hover:underline">Read our Privacy Policy</a>.</div>
+                            <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer">
+                                We care about the protection of your data.  
+                                <Link to="/privacy" className="font-medium text-primary-600 hover:underline">
+                                    Read our Privacy Policy
+                                </Link>.
+                            </div>
                         </Form>
                     </div>
                 </div>
@@ -109,21 +114,34 @@ export default function blogUrl() {
                     <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
                         
                     {loaderData["posts"].map((Blog) => (
-                        <article className="max-w-xs">
+                        <article className="max-w-xs flex flex-col justify-between h-full">
+                        <div>
                             <a href="#">
-                                <img src={Blog.img} className="mb-5 rounded-lg" alt={Blog.img_url} />
+                                <img 
+                                    src={Blog.img} 
+                                    className="mb-5 rounded-lg object-cover" 
+                                    alt={Blog.img_url} 
+                                    style={{ height: '180px', width: '100%' }} 
+                                />
                             </a>
                             <h3 className="mb-2 text-xl font-bold leading-tight text-gray-900">
                                 <a href="#">{Blog.title}</a>
                             </h3>
                             <p className="mb-4 text-gray-500">{Blog.description}</p>
-                            <Link to={`/Blog/${Blog.url}`} className="btn btn-primary">Open</Link>
-                        </article>
+                        </div>
+                        <div className="mt-auto">
+                            <Link to={`/Blog/${Blog.url}`} className="btn btn-primary">
+                                Open
+                            </Link>
+                        </div>
+                    </article>
                     ))}
 
                     </div>
                 </div>
             </aside>
+
+            
 
             
         </>

@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 export const meta: MetaFunction = () => {
     return { 
         title: "Fitness Blueprint | Blog", 
-        description: "See useful articles about what matters"
+        description: "Science based Blog about Fitness and Health"
     };
   };
 
@@ -54,6 +54,7 @@ export default function App() {
     const handleNext = () => {
         if (currentPage < totalPages - 1) {
             setCurrentPage(currentPage + 1);
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
         }
     };
 
@@ -61,6 +62,7 @@ export default function App() {
     const handleBack = () => {
         if (currentPage > 0) {
             setCurrentPage(currentPage - 1);
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
         }
     };
   
@@ -79,6 +81,26 @@ export default function App() {
         <div>
             <HEADLINE h1="Up to Date Knowledge about Fitness and Health" p="Find out whats good for you."/>
             <div className="mb-4"></div>
+            {currentPage > 0 && (
+                <div className="flex justify-between mb-4">
+                <button 
+                    onClick={handleBack} 
+                    disabled={currentPage === 0} 
+                    className="btn btn-secondary"
+                >
+                    Back
+                </button>
+                <p>Displaying {startIndex + 1} - {Math.min(endIndex, loaderData.length)} of {loaderData.length}</p>
+                <button 
+                    onClick={handleNext} 
+                    disabled={currentPage >= totalPages - 1} 
+                    className="btn btn-secondary"
+                >
+                    Next
+                </button>
+                </div>
+                
+            )}
             {currentBlogs.map((Blog) => (
                 <div className="card lg:card-side bg-base-100 shadow-xl mb-8">
                     <figure><img className="object-cover w-full aspect-square rounded-2xl h-96 md:h-auto md:w-48" src={Blog.img} alt={Blog.img_url}/></figure>
@@ -92,7 +114,7 @@ export default function App() {
                 </div>
             ))}
 
-<div className="flex justify-between mt-4">
+            <div className="flex justify-between mt-4">
                 <button 
                     onClick={handleBack} 
                     disabled={currentPage === 0} 
@@ -131,7 +153,12 @@ export default function App() {
                                 {showButton ? <button type="submit" className="btn btn-secondary" onClick={() => setSeconds(3)} >Notify me</button> : <div className="btn btn-secondary">See ya! 💪🏽</div> }
                                 </div>
                             </div>
-                            <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer ">We care about the protection of your data. <a href="#" className="font-medium text-primary-600 hover:underline">Read our Privacy Policy</a>.</div>
+                            <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer">
+    We care about the protection of your data. 
+    <Link to="/privacy" className="font-medium text-primary-600 hover:underline">
+        Read our Privacy Policy
+    </Link>.
+</div>
                         </Form>
                     </div>
                 </div>
