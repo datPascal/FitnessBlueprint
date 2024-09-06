@@ -154,11 +154,11 @@ export default function App() {
                                 </div>
                             </div>
                             <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer">
-    We care about the protection of your data. 
-    <Link to="/privacy" className="font-medium text-primary-600 hover:underline">
-        Read our Privacy Policy
-    </Link>.
-</div>
+                                We care about the protection of your data. 
+                                <Link to="/privacy" className="font-medium text-primary-600 hover:underline">
+                                    Read our Privacy Policy
+                                </Link>.
+                            </div>
                         </Form>
                     </div>
                 </div>
