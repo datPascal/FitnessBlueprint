@@ -25,19 +25,19 @@ function HeroHome() {
         <div className="pt-12 pb-12 md:pt-20 md:pb-20">
           <div className="text-center pb-12 md:pb-16">
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">
-            The Ultimate Personal AI Assistant to <br/><span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Reach your Fitnessgoals</span>
+            Your Personal Fitness Coach <br/><span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Backed by Science</span>
             </h1>
             <div className="max-w-3xl mx-auto">
               <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">
-                Our AI-powered tool is packed with the most up to date fitness knowledge. 
+                Transform your fitness journey with AI-powered, science-based guidance tailored to your unique goals — whether you're burning fat, building muscle, or training for a marathon.
               </p>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300">
                 <div>
                   <Link
                     to="/blog"
-                    className="btn btn-primary mr-4 "
+                    className="btn btn-primary mr-4"
                   >
-                    Visit our scientific blog
+                    Explore Our Fitness Science Blog
                   </Link>
                 </div>
                 
@@ -49,7 +49,7 @@ function HeroHome() {
           <div>
             <div className="relative flex justify-center mb-8" data-aos="zoom-y-out" data-aos-delay="450">
               <div className="flex flex-col justify-center">
-                <img className="mx-auto rounded-2xl" src={HeroImage} width="768" height="432" alt="Hero" />
+                <img className="mx-auto rounded-2xl" src={HeroImage} width="768" height="432" alt="Fitness Blueprint App" />
                 <svg
                   className="absolute inset-0 max-w-full mx-auto md:max-w-none h-auto"
                   width="768"
@@ -66,11 +66,11 @@ function HeroHome() {
                 <div>
                 <Link
                     to="/getNotified"
-                    className="btn btn-primary mr-4 "
+                    className="btn btn-primary mr-4 text-lg font-bold"
                   >
-                    Get notified, when we launch.
+                    Get Early Access ➤
                   </Link>
-                
+                <p className="text-sm text-gray-500 mt-3">Launching in 3 months. Be the first to know!</p>
                 </div>
           </div>
         </div>
